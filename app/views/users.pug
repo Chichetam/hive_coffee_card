@@ -1,0 +1,31 @@
+extends layout
+block content
+  - console.log(data)
+  .main-content
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  h1 HIVE COFFEE CARD all users
+  <button type="search">Search</button>
+
+  //<!-- input tag -->
+
+   <input id="searchbar" onkeyup="search_names()" type="text"
+
+     name="search" placeholder="Search names">
+
+  table(border=1)
+      tr
+          td ID
+          td Name
+          td Role
+          td Stamps_Total 
+          td Date_and_time
+          td Email
+      for item in data
+          tr
+              td #{item.user_id}
+              td
+                  a(href='/users/' + item.user_id) #{item.user_name}
+              td #{item.user_role}
+              td #{item.stamp_total}
+              td #{item.stamp_datetime}
+              td #{item.user_email}

@@ -1,0 +1,14 @@
+extends layout
+block content
+    h1 HIVE COFFEE CARD
+    h2 #{user.role}
+    p Name: #{user.name}
+    p Email: #{user.email}
+    p Stamps Collected: #{user.stamps}
+    <a  href='/users' > <button> Back </button> </a>
+
+
+    form(action='/updatestamp/' + user.id, method = "GET")
+        input(type='hidden')
+        div 
+        input(type='submit' value='UPDATE STAMP')

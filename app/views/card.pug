@@ -1,0 +1,10 @@
+html 
+    head 
+        title Hive Cafe Coffee Card
+    body
+        block content 
+        h1 Hive Cafe 
+        h2 WELCOME  #{user.name}
+        h3 USER ID: #{user.id}
+
+        a(class = "button" href='/mycard/' + user.id) VIEW CARD
